@@ -1,56 +1,73 @@
-# 🛒 Distributed E-Commerce Platform  
-### Microservices-Based Capstone Project
+<!-- ===================================================== -->
+<!-- HERO SECTION -->
+<!-- ===================================================== -->
 
-> **Master’s Capstone Project**  
-> A production-inspired, scalable e-commerce platform designed using modern distributed systems principles.
+<h1 align="center">🛒 Distributed E-Commerce Platform</h1>
+<h3 align="center">A Scalable Microservices-Based Capstone Project</h3>
+
+<p align="center">
+  <em>Designed & implemented as a production-inspired distributed system</em>
+</p>
+
+<p align="center">
+  <a href="#-project-overview">Overview</a> •
+  <a href="#-architecture--system-design">Architecture</a> •
+  <a href="#-services--repositories">Services</a> •
+  <a href="#-system-flow">Flow</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-future-enhancements">Roadmap</a>
+</p>
 
 ---
 
 ## 📌 Project Overview
 
-This project is a **distributed e-commerce platform** built using a **microservices architecture**, where each core business capability is implemented as an independent service.
+This project is a **distributed e-commerce backend platform** built using a **microservices architecture**, where each core business capability is implemented as an **independent, deployable service**.
 
-The goal of this capstone is to demonstrate **real-world backend engineering practices**, including:
+🎯 **Objective of this Capstone**
+- Demonstrate real-world backend engineering practices
+- Apply distributed system design principles
+- Build a system that mirrors **industry-grade architectures**
 
-- Microservice decomposition  
-- Event-driven communication  
-- Service discovery  
-- Fault isolation  
-- Independent scalability  
-- Clean domain ownership  
-
-Rather than a monolithic application, this system reflects how **modern large-scale platforms** (Amazon, Flipkart, Shopify) are architected.
-
-The design and implementation follow the **Product Requirements Document (PRD)** and **High-Level Design (HLD)** defined for this project.
+Instead of a monolithic application, this platform models how **modern large-scale systems** (Amazon, Flipkart, Shopify) are actually built and evolved.
 
 ---
 
-## 🧠 Architectural Principles
+## 🧠 Architecture & System Design
 
-- **Microservices over Monolith** – each service owns its data and logic  
-- **Loose Coupling, Strong Contracts** – services interact via APIs and events  
-- **Event-Driven Design** – asynchronous communication where applicable  
-- **Scalability by Design** – services scale independently  
-- **Production-Oriented Thinking** – industry-aligned tools and patterns  
+✨ **Design Philosophy**
+- 🧩 Microservices over monoliths
+- 🔗 Loose coupling, strong service contracts
+- ⚡ Event-driven communication
+- 📈 Independent scalability
+- 🛡️ Fault isolation by design
+
+Each service:
+- Owns its **data**
+- Exposes **well-defined APIs**
+- Communicates asynchronously where possible
+- Can be scaled and deployed independently
+
+This architecture strictly follows the **PRD and HLD** defined for the capstone.
 
 ---
 
 ## 🧩 Services & Repositories
 
-Each repository below represents an **independently deployable microservice**.  
-Together, they form one cohesive e-commerce system.
+> Each repository below represents a **standalone microservice**.  
+> Together, they form **one cohesive e-commerce platform**.
 
 ---
 
 ### 🔐 User Service
-**Repository:**  
-https://github.com/PremMakwana555/User-Service.git
+🔗 **Repository:**  
+👉 [User-Service](https://github.com/PremMakwana555/User-Service)
 
 **Responsibilities**
-- User registration and authentication  
-- Secure login and session management  
+- User registration & authentication  
+- Secure login & session management  
 - Profile management  
-- Password reset functionality  
+- Password reset flows  
 
 **PRD Coverage**
 - User Management  
@@ -59,14 +76,14 @@ https://github.com/PremMakwana555/User-Service.git
 ---
 
 ### 📦 Product Service
-**Repository:**  
-https://github.com/PremMakwana555/Product-Service.git
+🔗 **Repository:**  
+👉 [Product-Service](https://github.com/PremMakwana555/Product-Service)
 
 **Responsibilities**
 - Product catalog management  
 - Category-based browsing  
-- Product details and metadata  
-- Designed for search integration (Elasticsearch)
+- Product details & metadata  
+- Designed for fast search (Elasticsearch-ready)
 
 **PRD Coverage**
 - Product Catalog  
@@ -75,17 +92,17 @@ https://github.com/PremMakwana555/Product-Service.git
 ---
 
 ### 🛒 Cart Service
-**Repository:**  
-https://github.com/PremMakwana555/cart-service.git
+🔗 **Repository:**  
+👉 [Cart-Service](https://github.com/PremMakwana555/cart-service)
 
 **Responsibilities**
-- Add/remove products from cart  
+- Add / remove items from cart  
 - Maintain user cart state  
-- Optimized for fast access and updates  
+- Optimized for high read/write traffic  
 
-**Design Notes**
-- Designed for NoSQL-style storage  
-- Redis-based caching for performance  
+⚡ **Design Highlights**
+- NoSQL-friendly data model  
+- Redis-based caching for speed  
 
 **PRD Coverage**
 - Cart & Checkout  
@@ -93,13 +110,13 @@ https://github.com/PremMakwana555/cart-service.git
 ---
 
 ### 📑 Order Service
-**Repository:**  
-https://github.com/PremMakwana555/Order-Service.git
+🔗 **Repository:**  
+👉 [Order-Service](https://github.com/PremMakwana555/Order-Service)
 
 **Responsibilities**
-- Order creation and lifecycle management  
+- Order creation & lifecycle management  
 - Order history and tracking  
-- Coordinates with payment and notification services  
+- Coordinates with payment & notification services  
 
 **PRD Coverage**
 - Order Management  
@@ -108,17 +125,17 @@ https://github.com/PremMakwana555/Order-Service.git
 ---
 
 ### 🔔 Notification Service
-**Repository:**  
-https://github.com/PremMakwana555/Notification-service.git
+🔗 **Repository:**  
+👉 [Notification-Service](https://github.com/PremMakwana555/Notification-service)
 
 **Responsibilities**
-- Event-based user notifications  
-- Order confirmation emails  
-- User lifecycle notifications  
+- Event-driven notifications  
+- Order confirmations  
+- User lifecycle emails  
 
-**Design Notes**
+📨 **Design Notes**
+- Fully decoupled from core business logic  
 - Consumes events from the message broker  
-- Decoupled from core business logic  
 
 **PRD Coverage**
 - Notifications  
@@ -126,22 +143,23 @@ https://github.com/PremMakwana555/Notification-service.git
 ---
 
 ### 🧭 Service Registry
-**Repository:**  
-https://github.com/PremMakwana555/service-registry.git
+🔗 **Repository:**  
+👉 [Service-Registry](https://github.com/PremMakwana555/service-registry)
 
 **Responsibilities**
-- Service discovery  
-- Dynamic service registration  
+- Dynamic service discovery  
+- Runtime service registration  
 - Enables horizontal scaling  
 
-**Why This Matters**
-Service discovery is essential for true microservices.  
-This component removes hard-coded dependencies and enables resilience.
+🧠 **Why This Matters**
+Without service discovery, microservices become tightly coupled and brittle.  
+This component enables **true distributed behavior**.
 
 ---
 
-### 💳 Payment Service (Planned)
-**Status:** 🚧 In Progress  
+### 💳 Payment Service (Planned 🚧)
+
+**Status:** In Progress  
 
 **Planned Responsibilities**
 - Payment gateway abstraction  
@@ -149,79 +167,26 @@ This component removes hard-coded dependencies and enables resilience.
 - Payment confirmation events  
 
 **PRD Coverage**
-- Payment  
+- Payments  
 - Secure Transactions  
 - Receipt Generation  
 
 ---
 
-## 🔄 High-Level System Flow
+## 🔄 System Flow
 
-1. User authenticates via **User Service**
-2. Products are browsed via **Product Service**
-3. Items are added to **Cart Service**
-4. Checkout triggers **Order Service**
-5. Order emits events consumed by:
-   - **Payment Service**
-   - **Notification Service**
-6. Services discover each other using **Service Registry**
-
-This flow follows an **event-driven architecture** as defined in the HLD.
-
----
-
-## 🛠️ Technology Stack (Conceptual)
-
-| Layer | Technologies |
-|-----|-------------|
-| API Layer | RESTful APIs |
-| Communication | Event-driven (Kafka-style) |
-| Databases | MySQL, MongoDB |
-| Caching | Redis |
-| Search | Elasticsearch |
-| Service Discovery | Registry-based |
-| Notifications | Email (extensible to SMS / Push) |
-
----
-
-## 🎓 Academic & Engineering Value
-
-This capstone demonstrates:
-
-- Real-world microservice architecture  
-- Clear separation of concerns  
-- Distributed system communication patterns  
-- Scalability and fault-tolerant design thinking  
-- Production-inspired backend engineering  
-
-The system is designed to be **extensible**, **observable**, and **cloud-ready**.
-
----
-
-## 🚀 Future Enhancements
-
-Planned and suggested improvements:
-
-- API Gateway (centralized auth, routing, rate limiting)
-- Observability (metrics, tracing, centralized logging)
-- Distributed tracing (OpenTelemetry)
-- Failure handling & retries
-- Docker / Kubernetes deployment
-- Security hardening (JWT, secrets management)
-- Architecture diagrams and sequence flows
-
----
-
-## 📚 Documentation
-
-- Product Requirements Document (PRD)
-- High-Level Design (HLD)
-- Service-specific README files in each repository
-
----
-
-## 👨‍💻 Author
-
-**Prem Makwana**  
-Master’s Capstone Project  
-Focus: Backend Engineering, Distributed Systems, Microservices Architecture
+```text
+User
+ ↓
+API Request
+ ↓
+User Service ──► Product Service
+ ↓                  ↓
+Cart Service ◄───────┘
+ ↓
+Order Service
+ ↓
+┌───────────────┬────────────────┐
+│ Payment       │ Notification   │
+│ Service       │ Service        │
+└───────────────┴────────────────┘
