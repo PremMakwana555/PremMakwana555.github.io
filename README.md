@@ -1,159 +1,140 @@
-<!-- ===================================================== -->
-<!-- HERO SECTION -->
-<!-- ===================================================== -->
+<style>
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 4px 6px 4px 0;
+  border-radius: 12px;
+  background: #f2f4f8;
+  font-size: 13px;
+}
+.section {
+  margin-top: 40px;
+}
+.flow-step {
+  padding: 8px 0;
+}
+</style>
 
-<h1 align="center">🛒 Distributed E-Commerce Platform</h1>
-<h3 align="center">A Scalable Microservices-Based Capstone Project</h3>
+# 🛒 Distributed E-Commerce Platform  
+### Microservices-Based Capstone Project
 
-<p align="center">
-  <em>Designed & implemented as a production-inspired distributed system</em>
-</p>
-
-<p align="center">
-  <a href="#-project-overview">Overview</a> •
-  <a href="#-architecture--system-design">Architecture</a> •
-  <a href="#-services--repositories">Services</a> •
-  <a href="#-system-flow">Flow</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-future-enhancements">Roadmap</a>
+<p>
+  <span class="badge">Java</span>
+  <span class="badge">Spring Boot</span>
+  <span class="badge">Microservices</span>
+  <span class="badge">Distributed Systems</span>
+  <span class="badge">MS Capstone</span>
 </p>
 
 ---
 
 ## 📌 Project Overview
 
-This project is a **distributed e-commerce backend platform** built using a **microservices architecture**, where each core business capability is implemented as an **independent, deployable service**.
+This project is a **distributed e-commerce backend platform** designed using a **microservices architecture**, where each core business capability is implemented as an **independent, deployable service**.
 
-🎯 **Objective of this Capstone**
-- Demonstrate real-world backend engineering practices
-- Apply distributed system design principles
-- Build a system that mirrors **industry-grade architectures**
+The objective of this capstone project is to demonstrate **real-world backend engineering and distributed system design**, following patterns used in modern large-scale platforms such as Amazon, Flipkart, and Shopify.
 
-Instead of a monolithic application, this platform models how **modern large-scale systems** (Amazon, Flipkart, Shopify) are actually built and evolved.
+Rather than a monolithic application, this system emphasizes:
+- Service isolation  
+- Independent scalability  
+- Clear ownership of data and logic  
+- Production-inspired architecture  
+
+---
+
+<div class="section"></div>
+
+## 🧠 Architecture & Design Principles
+
+<p>
+  <span class="badge">Service Isolation</span>
+  <span class="badge">Loose Coupling</span>
+  <span class="badge">Scalable Design</span>
+  <span class="badge">Event-Oriented Thinking</span>
+</p>
+
+**Core Principles**
+- Each service owns its **data and business logic**
+- Services interact via **well-defined REST APIs**
+- Architecture supports **future async/event-driven evolution**
+- Components are designed to scale and fail independently
+
+This design strictly follows the **Product Requirements Document (PRD)** and **High-Level Design (HLD)** defined for the capstone.
 
 ---
 
-## 🧠 Architecture & System Design
-
-✨ **Design Philosophy**
-- 🧩 Microservices over monoliths
-- 🔗 Loose coupling, strong service contracts
-- ⚡ Event-driven communication
-- 📈 Independent scalability
-- 🛡️ Fault isolation by design
-
-Each service:
-- Owns its **data**
-- Exposes **well-defined APIs**
-- Communicates asynchronously where possible
-- Can be scaled and deployed independently
-
-This architecture strictly follows the **PRD and HLD** defined for the capstone.
-
----
+<div class="section"></div>
 
 ## 🧩 Services & Repositories
 
-> Each repository below represents a **standalone microservice**.  
-> Together, they form **one cohesive e-commerce platform**.
+Each repository below represents a **standalone microservice**.  
+Together, they form a **single cohesive e-commerce platform**.
 
 ---
 
-### 🔐 User Service
+### 🔐 User Service  
 🔗 **Repository:**  
-👉 [User-Service](https://github.com/PremMakwana555/User-Service)
+👉 https://github.com/PremMakwana555/User-Service
 
 **Responsibilities**
-- User registration & authentication  
-- Secure login & session management  
-- Profile management  
-- Password reset flows  
-
-**PRD Coverage**
-- User Management  
-- Authentication & Session Handling  
+- User registration and authentication  
+- Secure login and session management  
+- Profile management and password reset  
 
 ---
 
-### 📦 Product Service
+### 📦 Product Service  
 🔗 **Repository:**  
-👉 [Product-Service](https://github.com/PremMakwana555/Product-Service)
+👉 https://github.com/PremMakwana555/Product-Service
 
 **Responsibilities**
-- Product catalog management  
-- Category-based browsing  
-- Product details & metadata  
-- Designed for fast search (Elasticsearch-ready)
-
-**PRD Coverage**
-- Product Catalog  
-- Search & Browsing  
+- Product catalog and category management  
+- Product details and metadata  
+- Search-ready service (as per design)
 
 ---
 
-### 🛒 Cart Service
+### 🛒 Cart Service  
 🔗 **Repository:**  
-👉 [Cart-Service](https://github.com/PremMakwana555/cart-service)
+👉 https://github.com/PremMakwana555/cart-service
 
 **Responsibilities**
-- Add / remove items from cart  
+- Add and remove items from cart  
 - Maintain user cart state  
-- Optimized for high read/write traffic  
-
-⚡ **Design Highlights**
-- NoSQL-friendly data model  
-- Redis-based caching for speed  
-
-**PRD Coverage**
-- Cart & Checkout  
+- Optimized for high read/write operations  
 
 ---
 
-### 📑 Order Service
+### 📑 Order Service  
 🔗 **Repository:**  
-👉 [Order-Service](https://github.com/PremMakwana555/Order-Service)
+👉 https://github.com/PremMakwana555/Order-Service
 
 **Responsibilities**
-- Order creation & lifecycle management  
+- Order creation and lifecycle management  
 - Order history and tracking  
-- Coordinates with payment & notification services  
-
-**PRD Coverage**
-- Order Management  
-- Order Confirmation & Tracking  
+- Coordination with payment and notification services  
 
 ---
 
-### 🔔 Notification Service
+### 🔔 Notification Service  
 🔗 **Repository:**  
-👉 [Notification-Service](https://github.com/PremMakwana555/Notification-service)
+👉 https://github.com/PremMakwana555/Notification-service
 
 **Responsibilities**
-- Event-driven notifications  
+- Event-based notifications  
 - Order confirmations  
-- User lifecycle emails  
-
-📨 **Design Notes**
-- Fully decoupled from core business logic  
-- Consumes events from the message broker  
-
-**PRD Coverage**
-- Notifications  
+- User lifecycle communication  
 
 ---
 
-### 🧭 Service Registry
+### 🧭 Service Registry  
 🔗 **Repository:**  
-👉 [Service-Registry](https://github.com/PremMakwana555/service-registry)
+👉 https://github.com/PremMakwana555/service-registry
 
 **Responsibilities**
-- Dynamic service discovery  
-- Runtime service registration  
+- Service discovery  
+- Dynamic service registration  
 - Enables horizontal scaling  
-
-🧠 **Why This Matters**
-Without service discovery, microservices become tightly coupled and brittle.  
-This component enables **true distributed behavior**.
 
 ---
 
@@ -163,30 +144,94 @@ This component enables **true distributed behavior**.
 
 **Planned Responsibilities**
 - Payment gateway abstraction  
-- Secure transaction handling  
-- Payment confirmation events  
-
-**PRD Coverage**
-- Payments  
-- Secure Transactions  
-- Receipt Generation  
+- Secure transaction processing  
+- Payment confirmation workflows  
 
 ---
 
-## 🔄 System Flow
+<div class="section"></div>
 
-```text
-User
- ↓
-API Request
- ↓
-User Service ──► Product Service
- ↓                  ↓
-Cart Service ◄───────┘
- ↓
-Order Service
- ↓
-┌───────────────┬────────────────┐
-│ Payment       │ Notification   │
-│ Service       │ Service        │
-└───────────────┴────────────────┘
+## 🔄 End-to-End System Flow
+
+<div class="flow-step">➡️ User authenticates via <strong>User Service</strong></div>
+<div class="flow-step">➡️ Products are browsed using <strong>Product Service</strong></div>
+<div class="flow-step">➡️ Items are added to cart via <strong>Cart Service</strong></div>
+<div class="flow-step">➡️ Checkout triggers <strong>Order Service</strong></div>
+<div class="flow-step">➡️ Order processing initiates downstream actions</div>
+<div class="flow-step">  ↳ <strong>Payment Service</strong> handles payment</div>
+<div class="flow-step">  ↳ <strong>Notification Service</strong> sends confirmation</div>
+<div class="flow-step">➡️ Services discover each other using <strong>Service Registry</strong></div>
+
+This flow aligns with an **event-oriented architecture** as described in the HLD.
+
+---
+
+<div class="section"></div>
+
+## 🛠️ Tech Stack (Actual & Verified)
+
+| Layer | Technology |
+|------|-----------|
+| Language | **Java** |
+| Framework | **Spring Boot (Spring Ecosystem)** |
+| Build Tool | Maven |
+| API Style | RESTful APIs |
+| Service Discovery | Spring-based Service Registry |
+| Databases | Relational DB (MySQL / PostgreSQL as per service design) |
+| Caching | In-memory / Redis (where applicable) |
+| Notifications | Email (SMTP / provider-based) |
+| Architecture | Microservices |
+| Deployment | Docker-ready (recommended) |
+
+This stack reflects the **actual implementation** present in the repositories.
+
+---
+
+<div class="section"></div>
+
+## 🎓 Academic & Engineering Value
+
+This project demonstrates:
+
+- Real-world microservice decomposition  
+- Distributed backend system design  
+- Clear separation of concerns  
+- Scalable and maintainable architecture  
+- Production-inspired engineering decisions  
+
+The system is designed to be **extensible, observable, and cloud-ready**.
+
+---
+
+<div class="section"></div>
+
+## 🚀 Roadmap & Future Enhancements
+
+<p>
+  <span class="badge">API Gateway</span>
+  <span class="badge">Observability</span>
+  <span class="badge">Docker</span>
+  <span class="badge">Kubernetes</span>
+  <span class="badge">Security</span>
+</p>
+
+Planned improvements include:
+- API Gateway for routing, auth, and rate limiting  
+- Centralized logging and metrics  
+- Distributed tracing (OpenTelemetry)  
+- Payment service completion  
+- Containerized deployment (Docker / Kubernetes)  
+- Security hardening (JWT, secrets management)  
+- Architecture and sequence diagrams  
+
+---
+
+<div class="section"></div>
+
+## 👨‍💻 Author
+
+**Prem Makwana**  
+🎓 Master’s Capstone Project  
+💡 Focus: Backend Engineering, Distributed Systems, Microservices Architecture  
+
+🔗 **Project Hub:** https://premmakwana555.github.io/
