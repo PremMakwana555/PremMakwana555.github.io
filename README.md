@@ -140,9 +140,10 @@ Together, they form a **single cohesive e-commerce platform**.
 
 ### 💳 Payment Service (Planned 🚧)
 
-**Status:** In Progress  
+🔗 **Repository:**   
+👉 https://github.com/PremMakwana555/Payment-Service
 
-**Planned Responsibilities**
+** Responsibilities**
 - Payment gateway abstraction  
 - Secure transaction processing  
 - Payment confirmation workflows  
